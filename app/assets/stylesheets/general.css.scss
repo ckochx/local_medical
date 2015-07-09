@@ -18,7 +18,10 @@ body, html {
 
 ::selection{background:#1abc9c;color:white}
 
-.abcen{position: absolute;bottom: 8%;}
+.abcen {
+	position: absolute !important;
+	bottom: 8% ;
+}
 
 .abcen1{position: absolute;top: 20%;}
 
