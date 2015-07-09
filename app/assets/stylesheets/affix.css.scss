@@ -1,0 +1,17 @@
+.affix-top {
+
+}
+.affix-bottom {
+
+}
+
+.affix {
+  top: 0;
+  width: 1000px;
+}
+
+@media (min-width: 1200px) {
+  .affix {
+    width: 1100px;
+  }
+}

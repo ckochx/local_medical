@@ -1,0 +1,58 @@
+!!!
+/ FlatFy Theme - Andrea Galanti /
+/[if lt IE 7] <html class="no-js ie6 oldie" lang="en">
+/[if IE 7] <html class="no-js ie7 oldie" lang="en">
+/[if IE 8] <html class="no-js ie8 oldie" lang="en">
+/[if IE 9] <html class="no-js ie9" lang="en">
+/ [if gt IE 9]><!
+%html
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0", :name => "viewport"}
+    %meta{:content => "In-home medical testing to diagnose your STDs ", :name => "description"}
+    %meta{:content => "", :name => "author"}
+
+    / Custom Google Web Font
+    / %link{:href => "font-awesome/css/font-awesome.min.css", :rel => "stylesheet"}/
+    / %link{:href => "http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic", :rel => "stylesheet", :type => "text/css"}/
+    / %link{:href => "http://fonts.googleapis.com/css?family=Arvo:400,700", :rel => "stylesheet", :type => "text/css"}/
+
+    = stylesheet_link_tag "application", :media => "all"
+
+    - if content_for?(:title)
+      = yield(:title)
+    -else
+      %title In-home medical testing to diagnose your STDs
+
+    = csrf_meta_tags
+    /
+      [if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]
+
+
+  %body#home
+    #preloader
+      #status
+    = render :partial => "layouts/header"
+    = render :partial => "layouts/navbar"
+    = render :partial => "layouts/whatis"
+    #whatis.content-section-b{:style => "border-top: 0"}
+      .container
+        .col-md-6.col-md-offset-3.text-center.wrap_title
+          = yield
+    / = yield
+
+    = render :partial => "layouts/useit"
+    = render :partial => "layouts/screenshot"
+    = render :partial => "layouts/subscribe"
+    = render :partial => "layouts/container"
+    = render :partial => "layouts/banner"
+    = render :partial => "layouts/credits"
+    = render :partial => "layouts/container_lower"
+
+    = render :partial => "layouts/footer"
+    / Javascripts ==================================================
+    / Placed at the end of the document so the pages load faster
+    = javascript_include_tag "application"
