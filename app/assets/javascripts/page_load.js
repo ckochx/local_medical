@@ -6,7 +6,7 @@ var ready = function() {
   $('.navbar-default').affix({
     // TODO: Fixed the initial binding of the positioning
     offset: {
-      top: 50,
+      top: 450,
       // bottom: function () {
       //   return (this.bottom = $('.footer').outerHeight(true))
       // }
