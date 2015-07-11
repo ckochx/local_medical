@@ -11,26 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709003219) do
+ActiveRecord::Schema.define(version: 20150710032623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "city_zip_codes", force: :cascade do |t|
-    t.string  "zip"
-    t.string  "primary_city"
-    t.string  "alternate_names"
-    t.string  "county"
-    t.string  "area_codes"
-    t.decimal "lattitude"
-    t.decimal "longitude"
-    t.integer "estimated_population"
-    t.integer "state_id"
+    t.string   "zip"
+    t.string   "primary_city"
+    t.string   "alternate_names"
+    t.string   "county"
+    t.string   "area_codes"
+    t.decimal  "lattitude"
+    t.decimal  "longitude"
+    t.integer  "estimated_population"
+    t.integer  "state_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "states", force: :cascade do |t|
-    t.string "state_full"
-    t.string "state_abbr"
+    t.string   "state_full"
+    t.string   "state_abbr"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
   end
 
 end
