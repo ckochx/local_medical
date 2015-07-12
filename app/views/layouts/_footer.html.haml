@@ -2,6 +2,12 @@
   .container
     .row
       .col-md-7
+        - if content_for?(:footer)
+          = yield(:footer)
+        -else
+          %footer "Copyright © 2015 stds.medical-dental-pros.com - Best Prices and Most Discreet in-home testing."
+
+
         %h3.footer-title Follow Me!
         %p
           Vuoi ricevere news su altri template?

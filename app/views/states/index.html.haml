@@ -1,23 +1,30 @@
-- content_for :title do
-  %title= "Find out what STDs you might be carrying from the privacy of your home"
-%h4 Discover Electrical-Shop.com Product Categories
-%br
+#states
+  - content_for :title do
+    %title= "Find out what STDs you might be carrying from the privacy of your home"
+  %h4 Get personal and discreet STD tests sent to your home
+  %br
 
-%h2 Find discreet STD Tests in your state.
-%h3 States Listing
-/ %div.col-lg-9.col-md-9.col-sm-9
-/   .col-lg-3.col-md-3.col-sm-3
-/   .col-lg-2.col-md-2.col-sm-2
-/     %strong State Full Name
-/   .col-lg-2.col-md-2.col-sm-2
-/     %strong State Abbreviation
-/   .col-lg-2.col-md-2.col-sm-2
-/   %br{clear: "all"}
-/   %hr.featurette-divider
+  %h2 Find discreet STD Tests in your state.
+  %h3 States Listing
+  %ul
+    - @states.each do |state|
+      %li
+        =link_to("#{state.state_full}, #{state.state_abbr}", "state/#{state.id}")
+
+        =state.state_full
+  / %div.col-lg-9.col-md-9.col-sm-9
+  /   .col-lg-3.col-md-3.col-sm-3
+  /   .col-lg-2.col-md-2.col-sm-2
+  /     %strong State Full Name
+  /   .col-lg-2.col-md-2.col-sm-2
+  /     %strong State Abbreviation
+  /   .col-lg-2.col-md-2.col-sm-2
+  /   %br{clear: "all"}
+  /   %hr.featurette-divider
 
 
-/ %br{clear: "all"}
-/ %hr.featurette-divider
+  / %br{clear: "all"}
+  / %hr.featurette-divider
 
-- content_for :footer do
-  %footer=  "Copyright © 2015 stds.medical-dental-pros.com - Best Prices and Most Discreet."
+  - content_for :footer do
+    %footer=  "Copyright © 2015 stds.medical-dental-pros.com - Best Prices and Most Discreet."
