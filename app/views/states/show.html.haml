@@ -1,28 +1,22 @@
-- content_for :title do
-  %title= "Find out what STDs you might be carrying from the privacy of your home"
-%h4 Discover Electrical-Shop.com Product Categories
-%br
+#states
+  - content_for :title do
+    %title= "Discreet STD Testing in #{@state.state_full}"
+  %h4 Discover Electrical-Shop.com Product Categories
+  %br
 
-%h2 Show Controller: States
-%h3 States Listing
-%h5
-  =@state.state_full
-  ,
-  =@state.state_abbr
-%h6
-  CityZip Count:
-  =@city_zip_codes.count
+  %h2 Show Controller: States
+  %h4
+    Find Convenient & Discreet STD Testing in
+    =@state.state_full
 
-%ul
-  - @city_zip_codes.each do |city_zip_code|
-    %li
-      =city_zip_code.primary_city
-      =city_zip_code.zip
+  %h6
+    CityZip Count:
+    =@city_zip_codes.count
 
+  %ul
+    - @city_zip_codes.each do |city_zip_code|
+      %li
+        =link_to("#{city_zip_code.primary_city}, #{@state.state_full}, #{city_zip_code.zip}", "/city/#{city_zip_code.id}")
 
-
-/ %br{clear: "all"}
-/ %hr.featurette-divider
-
-- content_for :footer do
-  %footer=  "Copyright © 2015 stds.medical-dental-pros.com - Best Prices and Most Discreet."
+  - content_for :footer do
+    %footer=  "Copyright © 2015 stds.medical-dental-pros.com - Best Prices and Most Discreet."

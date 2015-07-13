@@ -1,36 +1,48 @@
 / Credits
+
 #credits.content-section-a
   .container
     .row
       .col-md-6.col-md-offset-3.text-center.wrap_title
-        %h2 Credits
-        %p.lead{:style => "margin-top:0"} A special thanks to Death.
+        %h2 Online STD Testing
+        %br
+        / %p.lead{:style => "margin-top:0"} A special thanks to Death.
       .col-sm-6.block.wow.bounceIn
         .row
-          .col-md-4.box-icon.rotate
-            %i.fa.fa-desktop.fa-4x
-          .col-md-8.box-ct
-            %h3 Bootstrap
-            %p Lorem ipsum dolor sit ametconsectetur adipiscing elit. Suspendisse orci quam.
+          %a.unadorned_link{href: @link_url, target: "_blank"}
+            .col-md-4.box-icon.rotate
+              %i.fa.fa-credit-card.fa-4x
+            .col-md-8.box-ct
+              %h3 Affordable
+              %p Competitive Prices- Multiple payment methods
       .col-sm-6.block.wow.bounceIn
         .row
-          .col-md-4.box-icon.rotate
-            %i.fa.fa-picture-o.fa-4x
-          .col-md-8.box-ct
-            %h3 Owl-Carousel
-            %p Nullam mo  arcu ac molestie scelerisqu vulputate, molestie ligula gravida, tempus ipsum.
+          %a.unadorned_link{href: @link_url, target: "_blank"}
+            .col-md-4.box-icon.rotate
+              %i.fa.fa-map-marker.fa-4x
+            .col-md-8.box-ct
+              %h3 Over 4000 Testing Locations
+              %p
+                - if @city_zip_code
+                  = "Convenient locations near #{@city_zip_code.primary_city} #{@city_zip_code.zip}, #{@city_zip_code.county} County, #{@state.state_full}"
+                - elsif @state
+                  = "Convenient locations in #{@state.state_full}"
+                - else
+                  Convenient locations across the country.
     .row.tworow
       .col-sm-6.block.wow.bounceIn
         .row
-          .col-md-4.box-icon.rotate
-            %i.fa.fa-magic.fa-4x
-          .col-md-8.box-ct
-            %h3 Codrops
-            %p Lorem ipsum dolor sit ametconsectetur adipiscing elit. Suspendisse orci quam.
+          %a.unadorned_link{href: @link_url, target: "_blank"}
+            .col-md-4.box-icon.rotate
+              %i.fa.fa-check-square-o.fa-4x
+            .col-md-8.box-ct
+              %h3 FDA-Approved Tests
+              %p The same tests used by doctors and hospitals
       .col-sm-6.block.wow.bounceIn
         .row
-          .col-md-4.box-icon.rotate
-            %i.fa.fa-heart.fa-4x
-          .col-md-8.box-ct
-            %h3 Lorem Ipsum
-            %p Nullam mo  arcu ac molestie scelerisqu vulputate, molestie ligula gravida, tempus ipsum.
+          %a.unadorned_link{href: @link_url, target: "_blank"}
+            .col-md-4.box-icon.rotate
+              %i.fa.fa-user-secret.fa-4x
+            .col-md-8.box-ct
+              %h3 Complete Confidentiality
+              %p Results are only reported to you, not to your insurance company

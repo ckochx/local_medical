@@ -13,11 +13,6 @@
     %meta{:content => "In-home medical testing to diagnose your STDs ", :name => "description"}
     %meta{:content => "", :name => "author"}
 
-    / Custom Google Web Font
-    / %link{:href => "font-awesome/css/font-awesome.min.css", :rel => "stylesheet"}/
-    / %link{:href => "http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic", :rel => "stylesheet", :type => "text/css"}/
-    / %link{:href => "http://fonts.googleapis.com/css?family=Arvo:400,700", :rel => "stylesheet", :type => "text/css"}/
-
     = stylesheet_link_tag "application", :media => "all"
 
     - if content_for?(:title)
@@ -33,27 +28,33 @@
 
 
   %body#home
-    #preloader
-      #status
-    = render :partial => "layouts/header"
-    = render :partial => "layouts/navbar"
-    = render :partial => "layouts/whatis"
+    / #preloader
+    /   #status
+
+    - if params[:controller] == 'states' && params[:action] == 'index'
+      = render partial: "layouts/header"
+    -else
+      = render partial: "layouts/header_banner"
+    / = render partial: "layouts/header"
+    = render partial: "layouts/navbar"
+    = render partial: "layouts/whatis"
     #whatis.content-section-b{:style => "border-top: 0"}
       .container
         .col-md-10.col-md-offset-2.text-center.wrap_title
           = yield
     / = yield
 
-    = render :partial => "layouts/useit"
-    = render :partial => "layouts/screenshot"
-    = render :partial => "layouts/subscribe"
-    = render :partial => "layouts/container_drag_gallery"
-    = render :partial => "layouts/container_bullets"
-    = render :partial => "layouts/banner"
-    = render :partial => "layouts/credits"
-    = render :partial => "layouts/container_lower"
+    = render partial: "layouts/useit"
+    = render partial: "layouts/screenshot"
+    = render partial: "layouts/subscribe"
+    = render partial: "layouts/container_bullets"
+    = render partial: "layouts/container_drag_gallery"
+    = render partial: "layouts/banner"
+    = render partial: "layouts/credits"
+    = render partial: "layouts/container_lower"
 
-    = render :partial => "layouts/footer"
+    = render partial: "layouts/footer"
+
     / Javascripts ==================================================
     / Placed at the end of the document so the pages load faster
     = javascript_include_tag "application"

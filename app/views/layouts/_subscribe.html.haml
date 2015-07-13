@@ -1,21 +1,22 @@
 .content-section-c
   .container
-    .row>
+    .row
       .col-md-6.col-md-offset-3.text-center.white
-        %h2 Get Live Updates
-        %p.lead{:style => "margin-top:0"} A special thanks to Death.
+        %h2 Don't Wait
+        %p.lead{:style => "margin-top:0"} Order now.
       .col-md-6.col-md-offset-3.text-center
         .mockup-content
           .morph-button.wow.pulse.morph-button-inflow.morph-button-inflow-1
             %button{:type => "button "}
-              %span Subscribe to our Newsletter
+              %span Results in a day or two
             .morph-content
               %div
-                .content-style-form.content-style-form-4
-                  %h2.morph-clone Subscribe to our Newsletter
-                  %form
-                    %p
-                      %label Your Email Address
-                      %input{:type => "text"}/
-                    %p
-                      %button Subscribe me
+                %a{href: @link_url, target: "_blank"}
+                  .content-style-form.content-style-form-4
+                    %h2.morph-clone Results in a day or two
+              /     %form
+              /       %p
+              /         %label Your Email Address
+              /         %input{:type => "text"}
+              /       %p
+              /         %button Subscribe me

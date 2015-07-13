@@ -1,22 +1,49 @@
 / /.container_bullets
-.content-section-a
+.content-section-b
   .container
     .row
       .col-sm-6.pull-right.wow.fadeInRightBig
         %img.img-responsive
           = image_tag("blood_draw-sm.jpg", style: "width: 130%;")
       .col-sm-6.wow.fadeInLeftBig{"data-animation-delay" => "200"}
-        %h3.section-heading Font Awesome & Glyphicon
+        %h3.section-heading 10 Reasons an online STD Test is the best choice.
+
         %p.lead
-          A special thanks to Death to the Stock Photo for
-          providing the photographs that you see in this template.
+          Something Something Tests
         %ul.descp.lead2
           %li
-            %i.glyphicon.glyphicon-signal
-            Reliable and Secure Platform
+            %i.fa.fa-tasks
+            10-Test Panel
           %li
-            %i.glyphicon.glyphicon-refresh
-            Everything is perfectly orgainized for future
+            %i.fa.fa-user-secret
+            Complete Confidentiality
           %li
-            %i.glyphicon.glyphicon-headphones
-            Attach large file easily
+            %i.fa.fa-map-marker
+            Convenient Testing Locations and Hours
+          - if @city_zip_code
+            %li
+              %i.fa.fa-street-view
+              Convenient Locations near
+              = "#{@city_zip_code.primary_city}, #{@city_zip_code.zip}"
+
+          %li
+            %i.fa.fa-usd
+            Competitive Pricing
+          %li
+            %i.fa.fa-check-square-o
+            FDA-Approved Tests
+          %li
+            %i.fa.fa-check-square-o
+            CLIA-Certified Labs
+          %li
+            %i.fa.fa-refresh
+            Fast Test Results
+          %li
+            %i.fa.fa-eyedropper
+            HIV RNA Testing
+          %li
+            %i.fa.fa-flask
+            Simple Testing Process
+          %li
+            %i.fa.fa-credit-card
+            Multiple Payment Options
