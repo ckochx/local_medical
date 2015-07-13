@@ -6,18 +6,19 @@
         %img.img-responsive
           =image_tag("medical_report.jpg")
       .col-sm-6.wow.fadeInLeftBig{"data-animation-delay" => "200"}
-        %h3.section-heading Safe, Secure, & Reliable Testing
         - if @city_zip_code
-          %h5.section-heading
-            = "#{@city_zip_code.primary_city}, #{@state.state_full}"
-          %h5.section-heading
-            = @city_zip_code.county
-        .sub-title.lead3
-          The same FDA-approved testing used by doctors and hospitals
-          %br/
-          Visit any nationwide testing center- No appointment necessary
-        %p.lead
-          You can visit any of our nationwide testing centers without an appointment, even the same day you place your order. Your results are delivered to you and no one else - nothing is reported to your insurance or placed on your medical records. Our counselors and doctors are available to provide guidance and support every step of the way, no matter what your results are.
+          %h3.section-heading
+            Safe, Secure, & Reliable Testing in
+            = @city_zip_code.zip
+            %h5.section-heading
+              = "#{@city_zip_code.primary_city}, #{@state.state_full}"
+            %h5.section-heading
+              = "#{@city_zip_code.county} County, #{@state.state_abbr}"
+        - else
+          %h3.section-heading
+            Safe, Secure, & Reliable Testing
+            = @state.try(:state_full) ? "in #{@state.state_full}" : "Nationwide"
+        = render partial: 'layouts/fda_message'
         %p
-          %a.btn.btn-embossed.btn-primary{href: "#", role: "button"} View Details
-          %a.btn.btn-embossed.btn-info{href: "#", role: "button"} Visit Website
+          %a.btn.btn-embossed.btn-primary{href: @link_url, role: "button"} View Details
+          %a.btn.btn-embossed.btn-info{href: @link_url, role: "button"} Visit Website

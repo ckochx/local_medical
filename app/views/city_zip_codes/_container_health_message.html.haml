@@ -1,0 +1,42 @@
+/ /.container_drag_gallery
+.content-section-a
+  .container
+    .row
+      .col-sm-6.wow.fadeInLeftBig
+        #owl-demo-1.owl-carousel
+          %a.image-link
+            .item
+              %img.img-responsive.img-rounded
+                = image_tag("worry1.jpg")
+          %a.image-link
+            .item
+              %img.img-responsive.img-rounded
+                = image_tag("worry3.jpg")
+          %a.image-link
+            .item
+              %img.img-responsive.img-rounded
+                = image_tag("worry2-sm.jpg")
+      .col-sm-6.wow.fadeInRightBig{"data-animation-delay" => "200"}
+        %h3.section-heading
+          Sexual Health- Important in
+          =@state.state_full
+        .sub-title.lead3
+          Get tested for your own health and the health of your partners
+          %br
+
+        %p.lead
+          In the U.S., and especially in
+          = succeed ',' do
+            = @state.state_full
+          the risk of contracting a sexually transmitted disease is a very real problem. Many STDs are asymptomatic until they are advanced. Getting tested is incredibly important for maintaining overall health as well as sexual health. Many people are tempted to ignore an STD in the hopes that it will go away on its own. In some parts of
+          = succeed ',' do
+            = @city_zip_code.primary_city
+          = @state.state_full
+          untreated sexually transmitted diseases have grown into a crisis. With some STDs, there isn’t a progression of symptoms; the disease could go from symptomless to life-threatening with nothing in between. STDs constitute a public health concern due to their transmissability and devastating effects on the communities they impact. Get yourself tested for you and for your partners in and around
+          = succeed ',' do
+            = @city_zip_code.primary_city
+            = @city_zip_code.zip
+        %p
+          %a.btn.btn-embossed.btn-primary{href: @link_url, role: "button"} Learn More
+          %a.btn.btn-embossed.btn-info{href: @promo_urls['order testing'], role: "button"} Order Now
+

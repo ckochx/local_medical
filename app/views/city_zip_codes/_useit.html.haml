@@ -1,0 +1,31 @@
+/ Use it
+#useit.content-section-a
+  .container
+    .row
+      .col-sm-6.pull-right.wow.fadeInRightBig
+        %img.img-responsive
+          =image_tag("medical_report.jpg")
+      .col-sm-6.wow.fadeInLeftBig{"data-animation-delay" => "200"}
+        %h3.section-heading
+          Safe, Secure, & Reliable Testing in
+          = @city_zip_code.zip
+          %h5.section-heading
+            = "#{@city_zip_code.primary_city}, #{@state.state_full}"
+          %h5.section-heading
+            = "#{@city_zip_code.county}, #{@state.state_abbr}"
+        .sub-title.lead3
+          The same FDA-approved testing used by doctors and hospitals
+          %br
+          Visit any testing center near
+          = "#{@city_zip_code.county}"
+          \- No appointment necessary
+        %p.lead
+          You can visit any of our
+          = "#{@city_zip_code.primary_city}, #{@state.state_full}"
+          nationwide testing centers without an appointment, even the same day you place your order. Your results are delivered to you and no one else - nothing is reported to your insurance or placed on your medical records. Our counselors and doctors are available to provide guidance and support every step of the way, no matter what your results are.
+
+
+        / = render partial: 'layouts/fda_message'
+        %p
+          %a.btn.btn-embossed.btn-primary{href: @link_url, role: "button"} View Details
+          %a.btn.btn-embossed.btn-info{href: @link_url, role: "button"} Visit Website

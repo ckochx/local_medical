@@ -21,14 +21,20 @@
             .col-md-4.box-icon.rotate
               %i.fa.fa-map-marker.fa-4x
             .col-md-8.box-ct
-              %h3 Over 4000 Testing Locations
-              %p
-                - if @city_zip_code
+              - if @city_zip_code
+                %h3
+                  = "Testing center neaer #{@city_zip_code.primary_city} #{@state.state_abbr}"
+                %p
                   = "Convenient locations near #{@city_zip_code.primary_city} #{@city_zip_code.zip}, #{@city_zip_code.county} County, #{@state.state_full}"
-                - elsif @state
+              - elsif @state
+                %h3
+                  = "Multiple #{@state.state_full} Testing Centers"
+                %p
                   = "Convenient locations in #{@state.state_full}"
-                - else
-                  Convenient locations across the country.
+              - else
+                %h3 Over 4000 nationwide testing centers
+                %p Convenient locations across the country.
+              %p
     .row.tworow
       .col-sm-6.block.wow.bounceIn
         .row

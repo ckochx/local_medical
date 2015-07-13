@@ -1,14 +1,24 @@
-- content_for :title do
-  %title= "Discreet In-home STD tests in #{@city_zip_code.primary_city}, #{@city_zip_code.zip}"
 
-%h4
-  =@city_zip_code.primary_city
-  =@city_zip_code.zip
-  =@state.state_full
-  =@state.state_abbr
-  %br
-  =@link_url
+= render partial: "useit"
+.container
+  .col-md-10.col-md-offset-2.text-center.wrap_title
 
-- content_for :footer do
-  %footer=  "Copyright © 2015 stds.medical-dental-pros.com - Best Prices and Most Discreet."
+    - content_for :title do
+      %title= "Discreet In-home STD tests in #{@city_zip_code.primary_city}, #{@city_zip_code.zip}"
 
+    %h4
+      =@city_zip_code.primary_city
+      =@city_zip_code.zip
+      %br
+      =@state.state_full
+      =@state.state_abbr
+      %br
+      =@link_url
+
+    - content_for :footer do
+      %footer=  "Copyright © 2015 stds.medical-dental-pros.com - Best Prices and Most Discreet."
+
+= render partial: "layouts/screenshot"
+= render partial: "layouts/subscribe"
+= render partial: "layouts/container_bullets"
+= render partial: "container_health_message"

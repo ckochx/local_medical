@@ -38,17 +38,12 @@
     / = render partial: "layouts/header"
     = render partial: "layouts/navbar"
     = render partial: "layouts/whatis"
-    #whatis.content-section-b{:style => "border-top: 0"}
-      .container
-        .col-md-10.col-md-offset-2.text-center.wrap_title
-          = yield
-    / = yield
+    / #whatis.content-section-b{:style => "border-top: 0"}
+    /   .container
+    /     .col-md-10.col-md-offset-2.text-center.wrap_title
+    /       = yield
+    = yield
 
-    = render partial: "layouts/useit"
-    = render partial: "layouts/screenshot"
-    = render partial: "layouts/subscribe"
-    = render partial: "layouts/container_bullets"
-    = render partial: "layouts/container_drag_gallery"
     = render partial: "layouts/banner"
     = render partial: "layouts/credits"
     = render partial: "layouts/container_lower"
