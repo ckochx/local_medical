@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715000416) do
+ActiveRecord::Schema.define(version: 20150715031752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,10 +29,14 @@ ActiveRecord::Schema.define(version: 20150715000416) do
     t.string  "slug"
   end
 
+  add_index "city_zip_codes", ["slug"], name: "index_city_zip_codes_on_slug", using: :btree
+
   create_table "states", force: :cascade do |t|
     t.string "state_full"
     t.string "state_abbr"
     t.string "slug"
   end
+
+  add_index "states", ["slug"], name: "index_states_on_slug", using: :btree
 
 end
