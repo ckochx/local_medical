@@ -2,12 +2,9 @@ require 'url_helpers'
 
 class CityZipCodesController < ApplicationController
 
-  # def index
-  #   @city_zip_codes = CityZipCode.all
-  # end
 
   def show
-    @city_zip_code = CityZipCode.find(params[:id])
+    @city_zip_code = CityZipCode.find_by(slug: params[:slug])
     @state = @city_zip_code.state
     @link_url = get_city_url
     @promo_urls = promo_urls

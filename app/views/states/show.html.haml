@@ -1,11 +1,11 @@
 = render partial: "layouts/useit"
+- content_for :title do
+  %title=  "Discreet STD Testing in #{@state.state_full}- No Appointment needed. Order Online."
 
 .container
   .col-md-10.col-md-offset-2.text-center.wrap_title
 
     #states
-      - content_for :title do
-        %title= "Discreet STD Testing in #{@state.state_full}"
       %h4 Discover Electrical-Shop.com Product Categories
       %br
 
@@ -14,41 +14,32 @@
         Find Convenient & Discreet STD Testing in
         =@state.state_full
 
-  - third = (@city_zip_codes.count / 3).floor
   - count = @city_zip_codes.count
+  - third = (count / 3).floor
   .col-md-4
-    %h6
-      CityZip Count:
-      =@city_zip_codes.count
 
     %ul
-      - city_zip_codes = @city_zip_codes[0..third]
+      - city_zip_codes = @city_zip_codes[0...third]
       - city_zip_codes.each do |city_zip_code|
         %li
-          =link_to("#{city_zip_code.primary_city}, #{@state.state_full}, #{city_zip_code.zip}", "/city/#{city_zip_code.id}")
+          =link_to("#{city_zip_code.primary_city}, #{@state.state_full}, #{city_zip_code.zip}", "/city/#{city_zip_code.slug}")
   .col-md-4
-    %h6
-      CityZip Count:
-      =@city_zip_codes.count
 
     %ul
-      - city_zip_codes = @city_zip_codes[third..third*2]
+      - city_zip_codes = @city_zip_codes[third...third*2]
       - city_zip_codes.each do |city_zip_code|
         %li
-          =link_to("#{city_zip_code.primary_city}, #{@state.state_full}, #{city_zip_code.zip}", "/city/#{city_zip_code.id}")
+          =link_to("#{city_zip_code.primary_city}, #{@state.state_full}, #{city_zip_code.zip}", "/city/#{city_zip_code.slug}")
   .col-md-4
-    %h6
-      CityZip Count:
-      =@city_zip_codes.count
 
     %ul
       - city_zip_codes = @city_zip_codes[third*2..count]
       - city_zip_codes.each do |city_zip_code|
         %li
-          =link_to("#{city_zip_code.primary_city}, #{@state.state_full}, #{city_zip_code.zip}", "/city/#{city_zip_code.id}")
+          =link_to("#{city_zip_code.primary_city}, #{@state.state_full}, #{city_zip_code.zip}", "/city/#{city_zip_code.slug}")
 
 - content_for :footer do
-  %footer=  "Copyright © 2015 stds.medical-dental-pros.com - Best Prices and Most Discreet."
+  %footer=  "Copyright © 2015 stds.medical-dental-pros.com - Best Prices and Most Discreet in #{@state.state_full}"
 = render partial: "layouts/screenshot"
 = render partial: "layouts/subscribe"
 = render partial: "layouts/container_bullets"

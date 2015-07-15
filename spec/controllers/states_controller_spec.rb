@@ -50,27 +50,28 @@ describe StatesController, type: :controller  do
 
   describe "GET show" do
     let!(:state) { State.all.sample }
-    let(:state_id) { state.id }
+    # let(:state_id) { state.id }
+    let(:slug) { state.slug }
     it "gets show" do
-      get :show, id: state_id
+      get :show, slug: slug
 
       expect(response.status).to eq 200
     end
 
     it "GET :show" do
-      get :show, id: state_id
+      get :show, slug: slug
 
       expect(response).to render_template(:show)
     end
 
     it "assigns @state" do
-      get :show, id: state_id
+      get :show, slug: slug
 
       expect(assigns(:state)).to eq(state)
     end
 
     it "assigns @promo_urls" do
-      get :show, id: state_id
+      get :show, slug: slug
 
       expect(assigns(:promo_urls)).to eq(UrlHelpers::PROMO_URLS)
     end
@@ -78,13 +79,13 @@ describe StatesController, type: :controller  do
     context "RenderViews" do
       render_views
       it "includes the state full name" do
-        get :show, id: state_id
+        get :show, slug: slug
 
         expect(response.body).to match /#{state.state_full}/
       end
 
       it "does not render the header" do
-        get :show, id: state_id
+        get :show, slug: slug
 
         expect(response).to_not render_template(partial: "_header")
       end
