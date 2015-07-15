@@ -1,0 +1,22 @@
+/ NavBar
+%nav.navbar-default{role: 'navigation', 'data-spy'=> 'affix', 'data-offset-top'=>450}
+  .container
+    .navbar-header
+      %button.navbar-toggle{'data-target' => '.navbar-ex1-collapse', 'data-toggle' => 'collapse', :type => 'button'}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{href: '/'} STD Testing
+    .collapse.navbar-collapse.navbar-right.navbar-ex1-collapse
+      %ul.nav.navbar-nav
+        %li.menuItem
+          %a{href: '#whatis'} How We Work
+        %li.menuItem
+          %a{href: "/state/#{@state.slug}"}
+            Back to
+            =@state.state_full
+        %li.menuItem
+          %a{href: @promo_urls['local testing'], target: '_blank'} Find a Test Center
+        / %li.menuItem
+        /   %a{href: '#contact'} Contact
