@@ -27,6 +27,7 @@ gem 'font-awesome-rails'
 
 gem 'bootstrap-sass'
 
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'pry-rails'
