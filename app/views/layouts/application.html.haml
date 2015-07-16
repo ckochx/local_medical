@@ -9,15 +9,14 @@
   %head
     %meta{:charset => "utf-8"}
     %meta{:content => "width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0", :name => "viewport"}
-    %meta{:content => "In-home medical testing to diagnose your STDs ", :name => "description"}
-    %meta{:content => "", :name => "author"}
-
-    = stylesheet_link_tag "application", :media => "all"
-
     - if content_for?(:title)
       = yield(:title)
     -else
       %title In-home medical testing to diagnose your STDs
+    %meta{:content => "lfox1_salY0KNYIgmYuvNMuymebtQP5CMS1x3QeRNVQ", :name => "google-site-verification"}
+    = render partial: "layouts/google_analytics"
+
+    = stylesheet_link_tag "application", :media => "all"
 
     = csrf_meta_tags
     /
@@ -48,7 +47,7 @@
     = render partial: "layouts/container_maps"
 
     = render partial: "layouts/footer"
-    = render partial: "layouts/google_analytics"
+
 
     / Javascripts ==================================================
     / Placed at the end of the document so the pages load faster
