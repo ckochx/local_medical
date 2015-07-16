@@ -1,9 +1,8 @@
-
-.col-md-8.col-md-offset-1.address
+.col-md-9.col-md-offset-2.address
   %address
     %h3
       Find Service Locations near
       = "#{@city_zip_code.county} #{@state.state_full}"
     %p.lead
       -string = "https://www.google.com/maps/embed/v1/place?q=" + @city_zip_code.primary_city + "%2C%20" + @state.state_abbr + "%20" + @city_zip_code.zip+ "%2C%20United%20States&key=AIzaSyCOdTqxcm4IR4CqSKkzarezQgaVszHDNqE"
-      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "500", :src => string, :style => "border:0", :width => "830"}
+      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "500", :src => string, :style => "border:0", :width => "900"}

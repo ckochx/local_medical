@@ -1,3 +1,8 @@
+//= require wow.min
+//= require owl.carousel
+//= require jquery.magnific-popup
+//= require jquery.corner
+
 $(window).load(function() {
 	//Preloader
 	$('#status').delay(300).fadeOut();

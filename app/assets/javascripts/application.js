@@ -14,4 +14,14 @@
 //= require jquery_ujs
 //= require script
 //= require bootstrap.min
+//= require jquery.magnific-popup
+//= require wow.min
+//= require uiMorphingButton_inflow
+//= require owl.carousel
+//= require classie
+//= require modernizr-2.6.2.min
+//= require modernizr.custom
+//= require jquery.corner
+//= require PIE_IE678
+//= require PIE_IE9
 //= require_tree .

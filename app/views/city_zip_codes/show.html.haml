@@ -1,21 +1,12 @@
-
 = render partial: "useit"
 .container
-  .col-md-10.col-md-offset-2.text-center.wrap_title
+  .col-md-10.col-md-offset-2.wrap_title
 
     - content_for :title do
       %title= "Discreet In-home STD tests in #{@city_zip_code.primary_city}, #{@city_zip_code.zip}"
 
     %h3
-      Order Now- Results in a Day or Two
-    %h4
-      =@city_zip_code.primary_city
-      =@city_zip_code.zip
-      %br
-      =@state.state_full
-      =@state.state_abbr
-      %br
-      =@link_url
+      =link_to "Order Now- Results in a Day or Two", @link_url, html_options: {target: "_blank"}
 
     - content_for :footer do
       %footer=  "Copyright © 2015 stds.medical-dental-pros.com - Best Prices and Most Discreet."
