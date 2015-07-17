@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require script
 //= require bootstrap.min
 //= require jquery.magnific-popup
 //= require wow.min
@@ -24,4 +23,4 @@
 //= require jquery.corner
 //= require PIE_IE678
 //= require PIE_IE9
-//= require_tree .
+//= require script

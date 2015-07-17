@@ -10,7 +10,7 @@
       %br
 
       %h2 Find discreet STD Tests in your state.
-      %h3 States Listing
+
       - count = @states.count
       - third = (count / 3).floor
       .col-md-4
@@ -47,3 +47,5 @@
 = render partial: "layouts/subscribe"
 = render partial: "layouts/container_bullets"
 = render partial: "layouts/container_drag_gallery"
+- content_for :javascript do
+  = javascript_include_tag 'script'
