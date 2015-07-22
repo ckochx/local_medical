@@ -35,6 +35,7 @@ bower.json
 */.DS_Store
 */*.DS_Store
 .DS_Store
+config/secrets.yml
 
 !/public/sitemap.xml.gz
 !/public/sitemap.xml
