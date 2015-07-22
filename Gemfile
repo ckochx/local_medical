@@ -29,6 +29,9 @@ gem 'bootstrap-sass'
 
 gem 'rails_12factor'
 
+#Build dynamic sitemap for site
+gem 'sitemap_generator'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec'
@@ -38,9 +41,5 @@ group :development, :test do
   gem 'better_errors'
 
   gem 'spring'
-
-  #Build dynamic sitemap for site
-  gem 'sitemap_generator'
-
 end
 

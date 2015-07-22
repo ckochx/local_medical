@@ -40,5 +40,5 @@ bower.json
 .DS_Store
 config/secrets.yml
 
-!public/sitemap.xml.gz
-!public/sitemap.xml
+!/public/sitemap.xml.gz
+!/public/sitemap.xml
