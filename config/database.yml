@@ -22,4 +22,6 @@ production:
   <<: *default
   database: std_medical_production
   username: std_medical
-  password: <%= ENV['STD_MEDICAL_DATABASE_PASSWORD'] %>
+  username: <%= ENV['STD_MEDICAL_DATABASE_PASSWORD'] || 'ck' %>
+  password: <%= ENV['STD_MEDICAL_DATABASE_PASSWORD'] || 'rubberBED'%>
+

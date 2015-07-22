@@ -1,0 +1,159 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.4.4
+-- Dumped by pg_dump version 9.4.0
+-- Started on 2015-07-14 22:24:17 CDT
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 176 (class 1259 OID 16406)
+-- Name: states; Type: TABLE; Schema: public; Owner: ck; Tablespace: 
+--
+
+CREATE TABLE states (
+    id integer NOT NULL,
+    state_full character varying,
+    state_abbr character varying,
+    slug character varying
+);
+
+
+ALTER TABLE states OWNER TO ck;
+
+--
+-- TOC entry 175 (class 1259 OID 16404)
+-- Name: states_id_seq; Type: SEQUENCE; Schema: public; Owner: ck
+--
+
+CREATE SEQUENCE states_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE states_id_seq OWNER TO ck;
+
+--
+-- TOC entry 2276 (class 0 OID 0)
+-- Dependencies: 175
+-- Name: states_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ck
+--
+
+ALTER SEQUENCE states_id_seq OWNED BY states.id;
+
+
+--
+-- TOC entry 2157 (class 2604 OID 16409)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: ck
+--
+
+ALTER TABLE ONLY states ALTER COLUMN id SET DEFAULT nextval('states_id_seq'::regclass);
+
+
+--
+-- TOC entry 2271 (class 0 OID 16406)
+-- Dependencies: 176
+-- Data for Name: states; Type: TABLE DATA; Schema: public; Owner: ck
+--
+
+COPY states (id, state_full, state_abbr, slug) FROM stdin;
+50	Massachusetts	MA	massachusetts
+56	New Jersey	NJ	new-jersey
+57	New York	NY	new-york
+53	Maine	ME	maine
+54	Vermont	VT	vermont
+55	Connecticut	CT	connecticut
+58	Pennsylvania	PA	pennsylvania
+59	Delaware	DE	delaware
+61	Virginia	VA	virginia
+62	Maryland	MD	maryland
+66	Georgia	GA	georgia
+67	Florida	FL	florida
+68	Alabama	AL	alabama
+69	Tennessee	TN	tennessee
+70	Mississippi	MS	mississippi
+71	Kentucky	KY	kentucky
+72	Ohio	OH	ohio
+73	Indiana	IN	indiana
+74	Michigan	MI	michigan
+75	Iowa	IA	iowa
+76	Wisconsin	WI	wisconsin
+77	Minnesota	MN	minnesota
+80	Montana	MT	montana
+81	Illinois	IL	illinois
+82	Missouri	MO	missouri
+83	Kansas	KS	kansas
+84	Nebraska	NE	nebraska
+85	Louisiana	LA	louisiana
+86	Arkansas	AR	arkansas
+87	Oklahoma	OK	oklahoma
+88	Texas	TX	texas
+89	Colorado	CO	colorado
+90	Wyoming	WY	wyoming
+91	Idaho	ID	idaho
+92	Utah	UT	utah
+93	Arizona	AZ	arizona
+95	Nevada	NV	nevada
+96	California	CA	california
+97	Oregon	OR	oregon
+98	Washington	WA	washington
+51	Rhode Island	RI	rhode-island
+52	New Hampshire	NH	new-hampshire
+60	Washington District of Columbia	DC	washington-district-of-columbia
+63	West Virginia	WV	west-virginia
+64	North Carolina	NC	north-carolina
+65	South Carolina	SC	south-carolina
+78	South Dakota	SD	south-dakota
+79	North Dakota	ND	north-dakota
+94	New Mexico	NM	new-mexico
+\.
+
+
+--
+-- TOC entry 2277 (class 0 OID 0)
+-- Dependencies: 175
+-- Name: states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ck
+--
+
+SELECT pg_catalog.setval('states_id_seq', 4, true);
+
+
+--
+-- TOC entry 2160 (class 2606 OID 16414)
+-- Name: states_pkey; Type: CONSTRAINT; Schema: public; Owner: ck; Tablespace: 
+--
+
+ALTER TABLE ONLY states
+    ADD CONSTRAINT states_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2158 (class 1259 OID 48074)
+-- Name: index_states_on_slug; Type: INDEX; Schema: public; Owner: ck; Tablespace: 
+--
+
+CREATE INDEX index_states_on_slug ON states USING btree (slug);
+
+
+-- Completed on 2015-07-14 22:24:17 CDT
+
+--
+-- PostgreSQL database dump complete
+--
+

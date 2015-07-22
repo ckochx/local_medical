@@ -1,0 +1,34 @@
+Dump Command
+
+PGPASSWORD=rubberBED pg_dump -Fc --no-acl --no-owner -h localhost -U ck std_medical_development > std_medical_development.dump
+
+Scale Down Heroku:
+heroku pg:wait
+heroku maintenance:on
+heroku ps:scale worker=0
+	Scale workers down (if using workers)
+
+
+Heroku Restore DB Command:
+heroku pg:backups restore 'http://jgkmarketing.com/feeds/std_medical_development.dump' DATABASE_URL --confirm classique-chocolatine-1428
+
+Provisions new hobby-basic db
+heroku addons:add heroku-postgresql:hobby-basic
+
+Promote Newly restored DB to primary:
+heroku pg:promote HEROKU_POSTGRESQL_ORANGE_URL
+
+heroku maintenance:off
+
+heroku addons:remove HEROKU_POSTGRESQL_OLD_DB_URL
+
+
+
+
+pg_restore --data-only --table=city_zip_codes std_medical_development.dump > std_medical_development
+pg_restore --data-only --table=states std_medical_development.dump > std_medical_development
+
+pg_dump --data-only --table=states std_medical_development > onetable.pg
+pg_restore --data-only --table=city_zip_codes onetable.pg > std_medical_development
+pg_restore --data-only --table=city_zip_codes onetable.pg > std_medical_development
+psql std_medical_development < onetable.pg
