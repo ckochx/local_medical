@@ -38,5 +38,9 @@ group :development, :test do
   gem 'better_errors'
 
   gem 'spring'
+
+  #Build dynamic sitemap for site
+  gem 'sitemap_generator'
+
 end
 
